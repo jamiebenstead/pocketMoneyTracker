@@ -1,5 +1,7 @@
 {
   "name": "pockeyMoneyTracker",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,9 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Settings Page</ion-card-subtitle>
+      <ion-card-title>Welcome to Ionic</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
 
-<ion-content></ion-content>
+  <ion-item>
+    <ion-label position="stacked">
+      <ion-text>Amount*</ion-text>
+    </ion-label>
+    <ion-input required type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+<!--
+ TODO -
+  Add Daily/Weekly toogle box
+  Change view depending on which is selected
+  Set Day on Weekly
+  Set Time on both 
+-->
+
+  <ion-item>
+    <ion-label position="stacked">
+      <ion-text>Notification time*</ion-text>
+    </ion-label>
+    <ion-input required type="time" [(ngModel)]="time"></ion-input>
+  </ion-item>
+
+  
+
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="testFunc()">
+    Save
+  </ion-button>
+
+  <ion-button (click)="logValues()">
+    Log values
+  </ion-button>
+</ion-footer>
