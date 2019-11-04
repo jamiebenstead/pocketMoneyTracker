@@ -12,6 +12,7 @@ export class Tab2Page {
     nativeStorage: NativeStorage;
 
     this.getAmount();
+    //this.getSchedule();
   }
 
   init(){
@@ -19,9 +20,34 @@ export class Tab2Page {
   }
 
   amount;
+  schedule;
   time;
+  
+  daily;
+  weekly;
 
-  testFunc(){
+  getSchedule(){
+    NativeStorage.getItem('schedule')
+      .then(
+        data => console.log(data),
+        error => console.error(error)
+      );
+  }
+
+  setSchedule(){
+    //this.schedule = true;
+    console.log(this.schedule);
+    if(this.schedule === 'daily'){
+      this.daily = true;
+      this.weekly = false;
+    } 
+    if(this.schedule === 'weekly'){
+      this.daily = false;
+      this.weekly = true;
+    }
+  }
+
+  saveSettings(){
     console.log(this.amount);
     console.log("testFunc");
     
@@ -42,6 +68,7 @@ export class Tab2Page {
 
   logValues(){
     console.log(this.amount);
+    console.log(this.schedule);
     console.log(this.time);
   }
 

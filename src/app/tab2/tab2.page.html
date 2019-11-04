@@ -21,6 +21,30 @@
   Set Day on Weekly
   Set Time on both 
 -->
+  <ion-radio-group [(ngModel)]="schedule" (ionChange)="setSchedule(value)">
+    <ion-list-header>
+      <ion-label position="stacked">Schedule*</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Daily</ion-label>
+      <ion-radio slot="start" color="success" value="daily"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Weekly</ion-label>
+      <ion-radio slot="start" color="tertiary" value="weekly"></ion-radio>
+    </ion-item>
+    
+  </ion-radio-group>
+
+  <div *ngIf="daily"> 
+    here is DAILY
+  </div>
+
+  <div *ngIf="weekly">
+    here is WEEKLY
+  </div>
 
   <ion-item>
     <ion-label position="stacked">
@@ -29,12 +53,10 @@
     <ion-input required type="time" [(ngModel)]="time"></ion-input>
   </ion-item>
 
-  
-
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="testFunc()">
+  <ion-button (click)="saveSettings()">
     Save
   </ion-button>
 
