@@ -14,44 +14,55 @@
     </ion-label>
     <ion-input required type="number" [(ngModel)]="amount"></ion-input>
   </ion-item>
-<!--
- TODO -
-  Add Daily/Weekly toogle box
-  Change view depending on which is selected
-  Set Day on Weekly
-  Set Time on both 
--->
-  <ion-radio-group [(ngModel)]="schedule" (ionChange)="setSchedule(value)">
+
+  <ion-radio-group [(ngModel)]="schedule" (ionChange)="setSchedule()">
     <ion-list-header>
       <ion-label position="stacked">Schedule*</ion-label>
     </ion-list-header>
 
     <ion-item>
       <ion-label>Daily</ion-label>
-      <ion-radio slot="start" color="success" value="daily"></ion-radio>
+      <ion-radio slot="start" value="daily"></ion-radio>
     </ion-item>
 
     <ion-item>
       <ion-label>Weekly</ion-label>
-      <ion-radio slot="start" color="tertiary" value="weekly"></ion-radio>
+      <ion-radio slot="start" value="weekly"></ion-radio>
     </ion-item>
-    
   </ion-radio-group>
 
   <div *ngIf="daily"> 
-    here is DAILY
+    <ion-item>
+      <ion-label position="stacked">
+        <ion-text>Notification time*</ion-text>
+      </ion-label>
+      <ion-input required type="time" [(ngModel)]="time"></ion-input>
+    </ion-item>
   </div>
 
   <div *ngIf="weekly">
-    here is WEEKLY
+    <ion-item>
+      <ion-label position="stacked">Day</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="dayChoice">
+        <ion-select-option value="monday">Monday</ion-select-option>
+        <ion-select-option value="tuesday">Tuesday</ion-select-option>
+        <ion-select-option value="wednesday">Wednesday</ion-select-option>
+        <ion-select-option value="thursday">Thursday</ion-select-option>
+        <ion-select-option value="friday">Friday</ion-select-option>
+        <ion-select-option value="saturday">Saturday</ion-select-option>
+        <ion-select-option value="sunday">Sunday</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">
+        <ion-text>Notification time*</ion-text>
+      </ion-label>
+      <ion-input required type="time" [(ngModel)]="time"></ion-input>
+    </ion-item>
   </div>
 
-  <ion-item>
-    <ion-label position="stacked">
-      <ion-text>Notification time*</ion-text>
-    </ion-label>
-    <ion-input required type="time" [(ngModel)]="time"></ion-input>
-  </ion-item>
+  
 
 </ion-content>
 

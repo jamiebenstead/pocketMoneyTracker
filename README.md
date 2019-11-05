@@ -1,3 +1,6 @@
+1.0.3 -
+    Continued with adding settings page
+
 1.0.2 -
     Started adding some logic to the settings display
 
