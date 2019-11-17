@@ -24,7 +24,9 @@ export class Tab2Page {
     //this.getSchedule();
   }
 
-  
+  /*
+    !TIDY NATIVE STORAGE
+  */
 
   
 

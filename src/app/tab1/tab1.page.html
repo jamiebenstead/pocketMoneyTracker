@@ -1,10 +1,64 @@
-<ion-content>
+<!--
   <ion-card class="welcome-card">
     <ion-card-header>
-      <ion-card-subtitle>Log page</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
+      <ion-card-subtitle>Children</ion-card-subtitle>
+      <ion-card-title>Children</ion-card-title>
     </ion-card-header>
     <ion-card-content>
     </ion-card-content>
-  </ion-card>
-</ion-content>
+  </ion-card>  
+-->
+
+<div *ngIf="showChildrenView">
+  <p>SHOW CHILDREN</p>
+
+  <ion-item *ngFor="let child of children;">
+    <h2>{{child.name}} - {{child.amount}}</h2>
+  </ion-item>
+
+  <ion-button (click)="getItem()">
+    getItem()
+  </ion-button> 
+</div>
+
+
+
+<div *ngIf="createChildForm">
+  <ion-item>
+    <ion-label position="stacked">
+      <ion-text>Name*</ion-text>
+    </ion-label>
+    <ion-input required type="text" [(ngModel)]="childName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">
+      Amount*
+    </ion-label>
+    <ion-input required type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+  
+</div>
+
+<div *ngIf="createChildButtonDiv"> 
+  <ion-footer>
+    <ion-button (click)="createChild()">
+      Create Child
+    </ion-button> 
+  </ion-footer>
+</div>
+   
+
+<div *ngIf="saveOrBackButtonDiv">
+  <ion-footer>
+  <ion-button (click)="save()">
+      Save
+    </ion-button>
+
+    <ion-button (click)="back()">
+      Back
+    </ion-button> 
+  </ion-footer>  
+</div>
+
+

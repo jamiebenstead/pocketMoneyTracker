@@ -1,3 +1,6 @@
+1.0.4 -
+    Can now create children using their name and pocket money amount. These are saved into local storage and are loaded and displayed on main page on app load.
+
 1.0.3 -
     Continued with adding settings page
 
