@@ -14,6 +14,7 @@
 
   <ion-item *ngFor="let child of children;">
     <h2>{{child.name}} - {{child.amount}}</h2>
+      <ion-icon style="position: absolute; right:5px;" name="create" value="child" (click)="testButtonFunc(value)"></ion-icon>
   </ion-item>
 
   <ion-button (click)="getItem()">

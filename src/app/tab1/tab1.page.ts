@@ -11,7 +11,6 @@ export class Tab1Page {
 
   /**
    * TODO - 
-   *  *Amount to 2 decimal places.
    *  *Notifications
    *  *Record money logged
    *  *View record of a child
@@ -60,7 +59,7 @@ export class Tab1Page {
   save(){
     var child = {
       name: this.childName,
-      amount: this.amount
+      amount: this.amount.toFixed(2)
     }
 
     this.children.push(child);
@@ -68,10 +67,15 @@ export class Tab1Page {
 
     this.nativeStorage.setItem("Children", this.children)
       .then(
-        () => console.log("Stored - name: " + this.childName + " Amount: " +this.amount),
+        () => console.log("Stored - name: " + this.childName + " Amount: " +this.amount.toFixed(2)),
         error => console.error("Error storying item - " + error),
       );
       this.back();
+  }
+
+  testButtonFunc(sender){
+    console.log("testButtonFunc...");
+    console.log(sender);
   }
 
   
