@@ -11,7 +11,7 @@ export class Tab1Page {
 
   /**
    * TODO - 
-   *  *Notifications
+   *  *Notifications -  This is the key area. Get this sorted so basic function of the app is working, then work on additional features like tracking...
    *  *Record money logged
    *  *View record of a child
    *  *Delete/Edit record of a child
@@ -30,6 +30,8 @@ export class Tab1Page {
 
   createChildButtonDiv = true;
   saveOrBackButtonDiv = false;
+
+  editChildDiv = false;
 
   children = [];
   childName = '';
@@ -73,15 +75,25 @@ export class Tab1Page {
       this.back();
   }
 
-  testButtonFunc(sender){
-    console.log("testButtonFunc...");
-    console.log(sender);
+  editName = ''
+  editAmount = ''
+
+  editChild(sender){
+    this.editName = sender.name;
+    this.editAmount = sender.amount;
+
+    this.editChildDiv = true;
+    this.showChildrenView = false;
+
+    this.createChildButtonDiv = false;
+    this.saveOrBackButtonDiv = true;
   }
 
   
   //*Navigation functions
   back(){
     this.showChildrenView = true;
+    this.editChildDiv = false;
     this.createChildForm = false;
 
     this.createChildButtonDiv = true;
