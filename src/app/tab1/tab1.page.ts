@@ -40,14 +40,9 @@ export class Tab1Page {
   onLoadGetChildren(){
     this.nativeStorage.getItem("Children")
       .then(
-          data => this.children = data,//this.returnedData(data),
+          data => this.children = data,
           error => console.error(error)
     );
-  }
-
-  //!Poss unneeded function
-  returnedData(data){
-    this.children = data;
   }
 
   createChild(){
@@ -118,7 +113,7 @@ export class Tab1Page {
     console.log("data cleared...");
     this.nativeStorage.clear()
     .then(
-      data => this.returnedData(data),
+      data => console.log(data),
       error => console.error(error)
     );
   }   
